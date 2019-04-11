@@ -1,15 +1,12 @@
-# MS_ML_CPC
-outline for CPC article: AI for interface simulation
 # Perspective: Artificial intelligence for accelerated materials discovery in electrocatalysis
 ## Outline Summary
-## Introduction: 
-Employing data-driven methods for accelerated materials discovery 
-o	A review section on recent data-driven methods for electro-catalyst design  
-•	Formulating an approach to speed up the materials discovery with machine learning
-o	Necessity for generating specialized data for specific reaction/catalyst   	
-•	Introducing Virtual Materials Intelligence (VMI) Labs as an open-source platform for collaborative research in materials discovery for clean energy applications 
-Abstract
-1.	Introduction
+1. Introduction: Employing data-driven methods for accelerated materials discovery 
+2.	A review section on recent data-driven methods for electro-catalyst design  
+3.	Formulating an approach to speed up the materials discovery with machine learning
+4.	Necessity for generating specialized data for specific reaction/catalyst   	
+5.	Introducing Virtual Materials Intelligence (VMI) Labs as an open-source platform for collaborative research in materials discovery for clean energy applications 
+## Abstract
+## 1. Introduction
 •	Motivation: AI methods have already developed in reasoning, learning, natural language processing, computer vision, and robotics. Extensive research is focused to develop such methods for virtual materials design, drug design and screening (Aspuru-Guzik, Alan, Roland Lindh, and Markus Reiher. ACS central science 4.2 (2018): 144-152., Duvenaud, David K., et al. Advances in neural information processing systems. 2015.) 
 •	Availability of data, sophisticated algorithms for model training, and parallel processing have enabled us to employ data-driven methods to speed up the materials design/discovery (Jain, Anubhav, et al. "Commentary: The Materials Project: A materials genome approach to accelerating materials innovation." Apl Materials 1.1 (2013): 011002.) (Agrawal, Ankit, and Alok Choudhary. Apl Materials 4.5 (2016): 053208.). (Jha, Sunil Kr, et al. "Renewable energy: Present research and future scope of Artificial Intelligence." Renewable and Sustainable Energy Reviews 77 (2017): 297-317. Gómez-Bombarelli, Rafael, et al. ACS central science 4.2 (2018): 268-276., Sanchez-Lengeling, Benjamin, and Alán Aspuru-Guzik. Science 361.6400 (2018): 360-365.) 
 •	 quantum mechanical calculations based on density functional theory have been successful  in predicting activity, selectivity and stability of catalyst materials for applications in energy storage and conversion devices (fulfilling the requirements in terms of cost and lifetime) (Eslamibidgoli, Mohammad J., et al. "How theory and simulation can drive fuel cell electrocatalysis." Nano Energy 29 (2016): 334-361.)
@@ -40,7 +37,7 @@ o	Step 1: Sampling - Generate a combinatorial library; a “big data” using DF
 o	Train a machine learning method (e.g. tune the parameters of a neural net) for searching, classifying, or clustering the chemical space in terms of functionality -  this is an efficient screening/filtering of structure-property relationships to prioritize/predict the materials of interest (maybe only a hundred out of 100,000 are predicted as good) (Meredig, Bryce, et al. "Combinatorial screening for new materials in unconstrained composition space with machine learning." Physical Review B 89.9 (2014): 094104., Ward, Logan, et al. "A general-purpose machine learning framework for predicting properties of inorganic materials." npj Computational Materials 2 (2016): 16028.), 
 o	use DFT again to calculate the properties of the predicted structures and evaluate the correlation between ML predicted and DFT calculated structures (Pyzer-Knapp, Edward O., et al. Annual Review of Materials Research 45 (2015): 195-216., Hachmann, Johannes, et al. The Journal of Physical Chemistry Letters 2.17 (2011): 2241-2251.). Filter out experimentally irrelevant structures.
 o	Finally, proposed material should be experimentally synthesized and be tested (essential step); Consequently, out of a hundred of predicted materials maybe only a few of them are useful.
-2.	Review on recent AI models for materials simulation (to be completed by Mehrtoos and Mehrdad)
+## 2.	Review on recent AI models for materials simulation (to be completed by Mehrtoos and Mehrdad)
 a.	learning the energy functional via examples (force field development)
 i.	strategy, review of the works (Brockherde, Felix, et al. "Bypassing the Kohn-Sham equations with machine learning." Nature communications 8.1 (2017): 872.)
 b.	
@@ -57,6 +54,6 @@ experiment	…	SVM	…	…	…	…
 •	Neural network potential-energy surfaces in chemistry: a tool for large-scale simulations (Behler, Jörg. Physical Chemistry Chemical Physics 13.40 (2011): 17930-17955.)
 o	Generating latent space of a molecule using autoencoder and predictor. (Gómez-Bombarelli, Rafael, et al. "Automatic chemical design using a data-driven continuous representation of molecules." ACS central science 4.2 (2018): 268-276.)
 •	More and more reviews needed here not only in electrocatalysis but also for other type of materials e.g. genetic algorithms extensively used for predicting macromolecules, drug design or polymers.
-3.	Introducing Virtual Materials Intelligence Database
+## 3.	Introducing Virtual Materials Intelligence Database
 (To be completed by NRC team)
-4.	Perspective for future research
+## 4.	Perspective for future research
