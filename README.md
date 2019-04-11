@@ -1,6 +1,6 @@
 # MS_ML_CPC
 outline for CPC article: AI for interface simulation
-Perspective: Artificial intelligence for accelerated materials discovery in electrocatalysis
+# Perspective: Artificial intelligence for accelerated materials discovery in electrocatalysis
 Outline Summary
 •	Introduction: Employing data-driven methods for accelerated materials discovery 
 o	A review section on recent data-driven methods for electro-catalyst design  
