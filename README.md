@@ -47,6 +47,12 @@ a.	learning the energy functional via examples (force field development)
 i.	strategy, review of the works (Brockherde,_2017)
 b.	
 •	Brief review: Generate a table of recent models for material simulation like below 
+
+| First Header  | Second Header | Third Header  | Fourth Header |
+| ------------- | ------------- | ------------- | ------------- |
+| Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+
 Dataset (size, how generated)	Features/attributes 	Training algorithm	input	output	performance	Reference
 DFT	Geometrical, electronic structure	Neural net	Atomic position	DFT energy	Compared with DFT	…
 DFT	…	Autoencoder	Chemical structure	…	…	…
