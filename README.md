@@ -9,33 +9,33 @@
 ## 1. Introduction
 •	Motivation: AI methods have already developed in reasoning, learning, natural language processing, computer vision, and robotics. Extensive research is focused to develop such methods for virtual materials design, drug design and screening (Aspuru-Guzik_2018, Duvenaud_2015) 
 •	Availability of data, sophisticated algorithms for model training, and parallel processing have enabled us to employ data-driven methods to speed up the materials design/discovery (Jain_2013, Agrawal_2016, Jha_2017, Gómez-Bombarelli_2018, Sanchez-Lengeling_2018) 
-•	 quantum mechanical calculations based on density functional theory have been successful  in predicting activity, selectivity and stability of catalyst materials for applications in energy storage and conversion devices (fulfilling the requirements in terms of cost and lifetime) (Eslamibidgoli_2016)
+•	Quantum mechanical calculations based on density functional theory have been successful  in predicting activity, selectivity and stability of catalyst materials for applications in energy storage and conversion devices (fulfilling the requirements in terms of cost and lifetime) (Eslamibidgoli_2016)
 •	However, DFT methods are limited to approaching the self-consistency challenge in electrocatalysis due to complexity of electrode-electrolyte interface and its immense parameter space (Eslamibidgoli_2018)  
-o	Electrode region: structure, shape and composition of material; Interfacial region: water structure, adsorbed species, surface charging; Electrolyte region: pH, ion distribution, reactant distribution
-o	Main challenges: (1) construct continuous path for potential between metal bulk and electrolyte bulk; across all components, layers and interface; DFT functionals (qm and classical) describe bulk properties well; coupling of regions at interfaces: not well represented in interface functionals (functionals for adsorbates, functionals for surface solvent layers…); is it possible at all to do this completely self-consistently from first principles or will there have to be some layer of empirical input? Example: oxide layer formation at Pt… Illustration: inability to reproduce non-linear charging relation of Pt in computational approach (would need reactivity DFT to handle oxide coverage as a function of potential); (2) controlling potential in DFT: theoretically impossible, as absolute potential does not exist; practically: need reference point or reference electrode – introducing further complications, but can be worked out… 
-o	what are the main attributes describing the catalyst activity and stability and how to compute them with a reasonable level of approximation?  
-o	system size exponentially scales the computational cost of DFT-based approaches 
-o	Moreover, addressing the complexity of space (particle size, shape, composition effects, etc.) specially at the interface, as well, statistical averaging over all possible configurations (surface vs bulk) at the electrolyte side is not feasible from first-principles methods alone
+	o	Electrode region: structure, shape and composition of material; Interfacial region: water structure, adsorbed species, surface charging; Electrolyte region: pH, ion distribution, reactant distribution
+	o	Main challenges: (1) construct continuous path for potential between metal bulk and electrolyte bulk; across all components, layers and interface; DFT functionals (qm and classical) describe bulk properties well; coupling of regions at interfaces: not well represented in interface functionals (functionals for adsorbates, functionals for surface solvent layers…); is it possible at all to do this completely self-consistently from first principles or will there have to be some layer of empirical input? Example: oxide layer formation at Pt… Illustration: inability to reproduce non-linear charging relation of Pt in computational approach (would need reactivity DFT to handle oxide coverage as a function of potential); (2) controlling potential in DFT: theoretically impossible, as absolute potential does not exist; practically: need reference point or reference electrode – introducing further complications, but can be worked out… 
+	o	what are the main attributes describing the catalyst activity and stability and how to compute them with a reasonable level of approximation?  
+	o	system size exponentially scales the computational cost of DFT-based approaches 
+	o	Moreover, addressing the complexity of space (particle size, shape, composition effects, etc.) specially at the interface, as well, statistical averaging over all possible configurations (surface vs bulk) at the electrolyte side is not feasible from first-principles methods alone
 •	Explain how AI models can address the challenges explained above in DFT calculations [we should be more cautious: there will be problems for which this will work (based on DFT alone) and problems for which it will not work (based on DFT alone; at least not in the near future …) and require input from phenomenological theory and/or experiment; can we identify the problems/systems falling into these different categories? It is a dream to have one approach for all; but that might not be a realistic expectation for the foreseeable future…]
-o	Statistical averaging is inherent property of machine learning models
-o	Dimensionality reduction methods (e.g. principal component analysis) can be used for finding the descriptor for catalyst activity of a certain reaction 
-o	DFT-based neural network architecture along with monte-carlo simulations have been developed to simulate large scale systems (Artrith_2014)
+	o	Statistical averaging is inherent property of machine learning models
+	o	Dimensionality reduction methods (e.g. principal component analysis) can be used for finding the descriptor for catalyst activity of a certain reaction 
+	o	DFT-based neural network architecture along with monte-carlo simulations have been developed to simulate large scale systems (Artrith_2014)
 •	Datasets (training, validation and test sets)
-o	Cleaning process
-o	Size, classes, balance or imbalance (imbalance: challenging to train a classifier to predict)
-o	Split to test set and cross validation set for training and tuning hyperparameters
-o	Feature generation and labeling 
-o	ML method for classification
-o	Model training and validation 
-o	Model evaluation and benchmarking (test on independent datasets for performance evaluation)
-o	Feature extraction (similarity metrics: Euclidean distance, Manhattan distance, Pearson correlation score, KL-divergence)
+	o	Cleaning process
+	o	Size, classes, balance or imbalance (imbalance: challenging to train a classifier to predict)
+	o	Split to test set and cross validation set for training and tuning hyperparameters
+	o	Feature generation and labeling 
+	o	ML method for classification
+	o	Model training and validation 
+	o	Model evaluation and benchmarking (test on independent datasets for performance evaluation)
+	o	Feature extraction (similarity metrics: Euclidean distance, Manhattan distance, Pearson correlation score, KL-divergence)
 •	An appropriate figure for this section: Formulate the approach with QM and machine learning (QM predictor based on machine learning) for simulation of electrode-electrolyte interface 
-o	Step 1: Sampling - Generate a combinatorial library; a “big data” using DFT to compute mixtures of materials (proper and relevant choices should be made here correspond to experiment, e.g. for various surface states, nanoparticles, bulk structures, slabs, with water layers, etc.; within an order of hundred thousand calculations needed (the larger the data the better to train the ML model). 
-	Bottleneck to generate this library? human resources (efficient data harvesting methods needed), computational resources. The solution is in availability of a database system for materials design for a specific target reaction. VIM as will be discussed below. 
-	Data should account for variables for the electronic structure of the solid electrode, solvent properties and ion distributions in the electrolyte as well as specific properties of a boundary region in-between. Idea: AIMD methods might be more efficiently employed for data generation (Groß_2014).  
-o	Train a machine learning method (e.g. tune the parameters of a neural net) for searching, classifying, or clustering the chemical space in terms of functionality -  this is an efficient screening/filtering of structure-property relationships to prioritize/predict the materials of interest (maybe only a hundred out of 100,000 are predicted as good) (Meredig_2014, Ward_2016), 
-o	use DFT again to calculate the properties of the predicted structures and evaluate the correlation between ML predicted and DFT calculated structures (Pyzer-Knapp_2015, Hachmann_2011). Filter out experimentally irrelevant structures.
-o	Finally, proposed material should be experimentally synthesized and be tested (essential step); Consequently, out of a hundred of predicted materials maybe only a few of them are useful.
+	o	Step 1: Sampling - Generate a combinatorial library; a “big data” using DFT to compute mixtures of materials (proper and relevant choices should be made here correspond to experiment, e.g. for various surface states, nanoparticles, bulk structures, slabs, with water layers, etc.; within an order of hundred thousand calculations needed (the larger the data the better to train the ML model). 
+			Bottleneck to generate this library? human resources (efficient data harvesting methods needed), computational resources. The solution is in availability of a database system for materials design for a specific target reaction. VIM as will be discussed below. 
+			Data should account for variables for the electronic structure of the solid electrode, solvent properties and ion distributions in the electrolyte as well as specific properties of a boundary region in-between. Idea: AIMD methods might be more efficiently employed for data generation (Groß_2014).  
+	o	Train a machine learning method (e.g. tune the parameters of a neural net) for searching, classifying, or clustering the chemical space in terms of functionality -  this is an efficient screening/filtering of structure-property relationships to prioritize/predict the materials of interest (maybe only a hundred out of 100,000 are predicted as good) (Meredig_2014, Ward_2016), 
+	o	use DFT again to calculate the properties of the predicted structures and evaluate the correlation between ML predicted and DFT calculated structures (Pyzer-Knapp_2015, Hachmann_2011). Filter out experimentally irrelevant structures.
+	o	Finally, proposed material should be experimentally synthesized and be tested (essential step); Consequently, out of a hundred of predicted materials maybe only a few of them are useful.
 
 ## 2.	Review on recent AI models for materials simulation (to be completed by Mehrtoos and Mehrdad)
 a.	learning the energy functional via examples (force field development)
