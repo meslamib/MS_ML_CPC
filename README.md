@@ -4,7 +4,7 @@
 
 1.     Employing data-driven methods for accelerated materials discovery 
 2.
-1.      Employing data-driven methods for accelerated materials discovery
+2.      Employing data-driven methods for accelerated materials discovery
 2.	A review section on recent data-driven methods for electro-catalyst design  
 3.	Formulating an approach to speed up the materials discovery with machine learning
 4.	Necessity for generating specialized data for specific reaction/catalyst   	
