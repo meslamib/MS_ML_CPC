@@ -1,26 +1,25 @@
 # Perspective: Artificial intelligence for accelerated materials discovery in electrocatalysis
 ## Outline Summary
-1. Introduction: Employing data-driven methods for accelerated materials discovery 
+1.  Employing data-driven methods for accelerated materials discovery 
 2.	A review section on recent data-driven methods for electro-catalyst design  
 3.	Formulating an approach to speed up the materials discovery with machine learning
 4.	Necessity for generating specialized data for specific reaction/catalyst   	
 5.	Introducing Virtual Materials Intelligence (VMI) Labs as an open-source platform for collaborative research in materials discovery for clean energy applications 
 ## Abstract
 ## 1. Introduction
-•	Motivation: AI methods have already developed in reasoning, learning, natural language processing, computer vision, and robotics. Extensive research is focused to develop such methods for virtual materials design, drug design and screening (Aspuru-Guzik, Alan, Roland Lindh, and Markus Reiher. ACS central science 4.2 (2018): 144-152., Duvenaud, David K., et al. Advances in neural information processing systems. 2015.) 
-•	Availability of data, sophisticated algorithms for model training, and parallel processing have enabled us to employ data-driven methods to speed up the materials design/discovery (Jain, Anubhav, et al. "Commentary: The Materials Project: A materials genome approach to accelerating materials innovation." Apl Materials 1.1 (2013): 011002.) (Agrawal, Ankit, and Alok Choudhary. Apl Materials 4.5 (2016): 053208.). (Jha, Sunil Kr, et al. "Renewable energy: Present research and future scope of Artificial Intelligence." Renewable and Sustainable Energy Reviews 77 (2017): 297-317. Gómez-Bombarelli, Rafael, et al. ACS central science 4.2 (2018): 268-276., Sanchez-Lengeling, Benjamin, and Alán Aspuru-Guzik. Science 361.6400 (2018): 360-365.) 
-•	 quantum mechanical calculations based on density functional theory have been successful  in predicting activity, selectivity and stability of catalyst materials for applications in energy storage and conversion devices (fulfilling the requirements in terms of cost and lifetime) (Eslamibidgoli, Mohammad J., et al. "How theory and simulation can drive fuel cell electrocatalysis." Nano Energy 29 (2016): 334-361.)
-•	However, DFT methods are limited to approaching the self-consistency challenge in electrocatalysis due to complexity of electrode-electrolyte interface and its immense parameter space (Eslamibidgoli, Mohammad J., and Michael H. Eikerling. "Approaching the self-consistency challenge of electrocatalysis with theory and computation." Current Opinion in Electrochemistry 9 (2018): 189-197.)  
+•	Motivation: AI methods have already developed in reasoning, learning, natural language processing, computer vision, and robotics. Extensive research is focused to develop such methods for virtual materials design, drug design and screening (Aspuru-Guzik_2018, Duvenaud_2015) 
+•	Availability of data, sophisticated algorithms for model training, and parallel processing have enabled us to employ data-driven methods to speed up the materials design/discovery (Jain_2013, Agrawal_2016, Jha_2017, Gómez-Bombarelli_2018, Sanchez-Lengeling_2018) 
+•	 quantum mechanical calculations based on density functional theory have been successful  in predicting activity, selectivity and stability of catalyst materials for applications in energy storage and conversion devices (fulfilling the requirements in terms of cost and lifetime) (Eslamibidgoli_2016)
+•	However, DFT methods are limited to approaching the self-consistency challenge in electrocatalysis due to complexity of electrode-electrolyte interface and its immense parameter space (Eslamibidgoli_2018)  
 o	Electrode region: structure, shape and composition of material; Interfacial region: water structure, adsorbed species, surface charging; Electrolyte region: pH, ion distribution, reactant distribution
-o	Main challenges: (1) construct continuous path for potential between metal bulk and electrolyte bulk; across all components, layers and interface; DFT functionals (qm and classical) describe bulk properties well; coupling of regions at interfaces: not well represented in interface functionals (functionals for adsorbates, functionals for surface solvent layers…); is it possible at all to do this completely self-consistently from first principles or will there have to be some layer of empirical input? Example: oxide layer formation at Pt… Illustration: inability to reproduce non-linear charging relation of Pt in computational approach (would need reactivity DFT to handle oxide coverage as a function of potential);
-(2) controlling potential in DFT: theoretically impossible, as absolute potential does not exist; practically: need reference point or reference electrode – introducing further complications, but can be worked out… 
+o	Main challenges: (1) construct continuous path for potential between metal bulk and electrolyte bulk; across all components, layers and interface; DFT functionals (qm and classical) describe bulk properties well; coupling of regions at interfaces: not well represented in interface functionals (functionals for adsorbates, functionals for surface solvent layers…); is it possible at all to do this completely self-consistently from first principles or will there have to be some layer of empirical input? Example: oxide layer formation at Pt… Illustration: inability to reproduce non-linear charging relation of Pt in computational approach (would need reactivity DFT to handle oxide coverage as a function of potential); (2) controlling potential in DFT: theoretically impossible, as absolute potential does not exist; practically: need reference point or reference electrode – introducing further complications, but can be worked out… 
 o	what are the main attributes describing the catalyst activity and stability and how to compute them with a reasonable level of approximation?  
 o	system size exponentially scales the computational cost of DFT-based approaches 
 o	Moreover, addressing the complexity of space (particle size, shape, composition effects, etc.) specially at the interface, as well, statistical averaging over all possible configurations (surface vs bulk) at the electrolyte side is not feasible from first-principles methods alone
 •	Explain how AI models can address the challenges explained above in DFT calculations [we should be more cautious: there will be problems for which this will work (based on DFT alone) and problems for which it will not work (based on DFT alone; at least not in the near future …) and require input from phenomenological theory and/or experiment; can we identify the problems/systems falling into these different categories? It is a dream to have one approach for all; but that might not be a realistic expectation for the foreseeable future…]
 o	Statistical averaging is inherent property of machine learning models
 o	Dimensionality reduction methods (e.g. principal component analysis) can be used for finding the descriptor for catalyst activity of a certain reaction 
-o	DFT-based neural network architecture along with monte-carlo simulations have been developed to simulate large scale systems (Artrith, Nongnuch, and Alexie M. Kolpak. "Understanding the composition and activity of electrocatalytic nanoalloys in aqueous solvents: A combination of DFT and accurate neural network potentials." Nano letters 14.5 (2014): 2670-2676.)
+o	DFT-based neural network architecture along with monte-carlo simulations have been developed to simulate large scale systems (Artrith_2014)
 •	Datasets (training, validation and test sets)
 o	Cleaning process
 o	Size, classes, balance or imbalance (imbalance: challenging to train a classifier to predict)
@@ -33,13 +32,14 @@ o	Feature extraction (similarity metrics: Euclidean distance, Manhattan distance
 •	An appropriate figure for this section: Formulate the approach with QM and machine learning (QM predictor based on machine learning) for simulation of electrode-electrolyte interface 
 o	Step 1: Sampling - Generate a combinatorial library; a “big data” using DFT to compute mixtures of materials (proper and relevant choices should be made here correspond to experiment, e.g. for various surface states, nanoparticles, bulk structures, slabs, with water layers, etc.; within an order of hundred thousand calculations needed (the larger the data the better to train the ML model). 
 	Bottleneck to generate this library? human resources (efficient data harvesting methods needed), computational resources. The solution is in availability of a database system for materials design for a specific target reaction. VIM as will be discussed below. 
-	Data should account for variables for the electronic structure of the solid electrode, solvent properties and ion distributions in the electrolyte as well as specific properties of a boundary region in-between. Idea: AIMD methods might be more efficiently employed for data generation (Groß, Axel, et al. Journal of The Electrochemical Society 161.8 (2014): E3015-E3020.).  
-o	Train a machine learning method (e.g. tune the parameters of a neural net) for searching, classifying, or clustering the chemical space in terms of functionality -  this is an efficient screening/filtering of structure-property relationships to prioritize/predict the materials of interest (maybe only a hundred out of 100,000 are predicted as good) (Meredig, Bryce, et al. "Combinatorial screening for new materials in unconstrained composition space with machine learning." Physical Review B 89.9 (2014): 094104., Ward, Logan, et al. "A general-purpose machine learning framework for predicting properties of inorganic materials." npj Computational Materials 2 (2016): 16028.), 
-o	use DFT again to calculate the properties of the predicted structures and evaluate the correlation between ML predicted and DFT calculated structures (Pyzer-Knapp, Edward O., et al. Annual Review of Materials Research 45 (2015): 195-216., Hachmann, Johannes, et al. The Journal of Physical Chemistry Letters 2.17 (2011): 2241-2251.). Filter out experimentally irrelevant structures.
+	Data should account for variables for the electronic structure of the solid electrode, solvent properties and ion distributions in the electrolyte as well as specific properties of a boundary region in-between. Idea: AIMD methods might be more efficiently employed for data generation (Groß_2014).  
+o	Train a machine learning method (e.g. tune the parameters of a neural net) for searching, classifying, or clustering the chemical space in terms of functionality -  this is an efficient screening/filtering of structure-property relationships to prioritize/predict the materials of interest (maybe only a hundred out of 100,000 are predicted as good) (Meredig_2014, Ward_2016), 
+o	use DFT again to calculate the properties of the predicted structures and evaluate the correlation between ML predicted and DFT calculated structures (Pyzer-Knapp_2015, Hachmann_2011). Filter out experimentally irrelevant structures.
 o	Finally, proposed material should be experimentally synthesized and be tested (essential step); Consequently, out of a hundred of predicted materials maybe only a few of them are useful.
+
 ## 2.	Review on recent AI models for materials simulation (to be completed by Mehrtoos and Mehrdad)
 a.	learning the energy functional via examples (force field development)
-i.	strategy, review of the works (Brockherde, Felix, et al. "Bypassing the Kohn-Sham equations with machine learning." Nature communications 8.1 (2017): 872.)
+i.	strategy, review of the works (Brockherde,_2017)
 b.	
 •	Brief review: Generate a table of recent models for material simulation like below 
 Dataset (size, how generated)	Features/attributes 	Training algorithm	input	output	performance	Reference
@@ -48,12 +48,37 @@ DFT	…	Autoencoder	Chemical structure	…	…	…
 experiment	…	SVM	…	…	…	…
 …	…	Genetic algorithm	…	…	…	…
 
-•	Different flavors of ML have been used: graphical probabilistic models for reaction network (Ulissi, Zachary W., et al. "To address surface reaction network complexity using scaling relations machine learning and DFT calculations." Nature communications 8 (2017): 14621.) 
-•	as well as models based on empirical risk minimization (Goldsmith, Bryan R., et al. "Machine learning for heterogeneous catalyst design and discovery." AIChE Journal 64.7 (2018): 2311-2323.): 
-•	Neural network models (Yao, Kun, et al. "The TensorMol-0.1 model chemistry: a neural network augmented with long-range physics." Chemical science 9.8 (2018): 2261-2269.) (Artrith, Nongnuch, and Alexie M. Kolpak. Nano letters 14.5 (2014): 2670-2676. Hy, Truong Son, et al. "Predicting molecular properties with covariant compositional networks." The Journal of chemical physics 148.24 (2018): 241745.
-•	Neural network potential-energy surfaces in chemistry: a tool for large-scale simulations (Behler, Jörg. Physical Chemistry Chemical Physics 13.40 (2011): 17930-17955.)
-o	Generating latent space of a molecule using autoencoder and predictor. (Gómez-Bombarelli, Rafael, et al. "Automatic chemical design using a data-driven continuous representation of molecules." ACS central science 4.2 (2018): 268-276.)
+•	Different flavors of ML have been used: graphical probabilistic models for reaction network (Ulissi_2017) 
+•	as well as models based on empirical risk minimization (Goldsmith_2018) 
+•	Neural network models (Yao_2018, Artrith_2014 Hy_2018)
+•	Neural network potential-energy surfaces in chemistry: a tool for large-scale simulations (Behler_2011)
+o	Generating latent space of a molecule using autoencoder and predictor. (Gómez-Bombarelli_2018)
 •	More and more reviews needed here not only in electrocatalysis but also for other type of materials e.g. genetic algorithms extensively used for predicting macromolecules, drug design or polymers.
 ## 3.	Introducing Virtual Materials Intelligence Database
 (To be completed by NRC team)
 ## 4.	Perspective for future research
+## 5.	References
+
+1. Aspuru-Guzik, Alan, Roland Lindh, and Markus Reiher. ACS central science 4.2 (2018): 144-152.
+2. Duvenaud, David K., et al. Advances in neural information processing systems. 2015.
+3. Jain, Anubhav, et al. "Commentary: The Materials Project: A materials genome approach to accelerating materials innovation." Apl Materials 1.1 (2013): 011002.
+4. Agrawal, Ankit, and Alok Choudhary. Apl Materials 4.5 (2016): 053208.
+5. Jha, Sunil Kr, et al. "Renewable energy: Present research and future scope of Artificial Intelligence." Renewable and Sustainable Energy Reviews 77 (2017): 297-317. 
+6. Gómez-Bombarelli, Rafael, et al. ACS central science 4.2 (2018): 268-276., 
+7. Sanchez-Lengeling, Benjamin, and Alán Aspuru-Guzik. Science 361.6400 (2018): 360-365.
+8. Eslamibidgoli, Mohammad J., et al. "How theory and simulation can drive fuel cell electrocatalysis." Nano Energy 29 (2016): 334-361.
+9. Eslamibidgoli, Mohammad J., and Michael H. Eikerling. "Approaching the self-consistency challenge of electrocatalysis with theory and computation." Current Opinion in Electrochemistry 9 (2018): 189-197.
+10. Artrith, Nongnuch, and Alexie M. Kolpak. "Understanding the composition and activity of electrocatalytic nanoalloys in aqueous solvents: A combination of DFT and accurate neural network potentials." Nano letters 14.5 (2014): 2670-2676.
+11. Groß, Axel, et al. Journal of The Electrochemical Society 161.8 (2014): E3015-E3020.
+12. Meredig, Bryce, et al. "Combinatorial screening for new materials in unconstrained composition space with machine learning." Physical Review B 89.9 (2014): 094104., 
+13. Ward, Logan, et al. "A general-purpose machine learning framework for predicting properties of inorganic materials." npj Computational Materials 2 (2016): 16028.
+14. Pyzer-Knapp, Edward O., et al. Annual Review of Materials Research 45 (2015): 195-216., 
+15. Hachmann, Johannes, et al. The Journal of Physical Chemistry Letters 2.17 (2011): 2241-2251.
+16. Brockherde, Felix, et al. "Bypassing the Kohn-Sham equations with machine learning." Nature communications 8.1 (2017): 872.
+17. Ulissi, Zachary W., et al. "To address surface reaction network complexity using scaling relations machine learning and DFT calculations." Nature communications 8 (2017): 14621.
+18. Goldsmith, Bryan R., et al. "Machine learning for heterogeneous catalyst design and discovery." AIChE Journal 64.7 (2018): 2311-2323.
+19. Yao, Kun, et al. "The TensorMol-0.1 model chemistry: a neural network augmented with long-range physics." Chemical science 9.8 (2018): 2261-2269.
+20. Artrith, Nongnuch, and Alexie M. Kolpak. Nano letters 14.5 (2014): 2670-2676. 
+21. Hy, Truong Son, et al. "Predicting molecular properties with covariant compositional networks." The Journal of chemical physics 148.24 (2018): 241745.
+22. Behler, Jörg. Physical Chemistry Chemical Physics 13.40 (2011): 17930-17955.
+23. Gómez-Bombarelli, Rafael, et al. "Automatic chemical design using a data-driven continuous representation of molecules." ACS central science 4.2 (2018): 268-276.
