@@ -63,7 +63,7 @@ b.
 
 •	Brief review: Generate a table of recent models for material simulation like below 
 
-| Dataset (size, how generated)  | Second Header | Third Header  | Fourth Header | Fifth Header  | Sixth Header | Seventh Header  | Eighth Header |
+| Dataset (size, availability, how generated)  | Features/Attributes | Training Algorithm  | Input | Output  | Performance | Seventh Header  | Reference |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
