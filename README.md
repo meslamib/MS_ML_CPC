@@ -1,4 +1,4 @@
-# Perspective: Artificial intelligence for accelerated materials discovery in electrocatalysis
+# Perspective: Machine learning for accelerated materials discovery in electrocatalysis
 
 ## Outline Summary
 
@@ -13,8 +13,9 @@
 ## 1. Introduction
 
 •	Motivation: AI methods have already developed in reasoning, learning, natural language processing, computer vision, and robotics. Extensive research is focused to develop such methods for virtual materials design, drug design and screening (Aspuru-Guzik_2018, Duvenaud_2015) 
+		
+		Machine learning is a branch in computer science that consists of a set of algorithms that find pattern in a given data. Although primary algorithms were developed in 1950s-1980s, it has been more recently that such algorithms (and more recently developed sophisticated ones) start working well. This is due to the availability of much bigger data for model training along with much more powerful parallel computer processing. Machine learning have already developed in reasoning, learning, natural language processing, computer vision, and robotics. Extensive research is focused to develop such methods for virtual materials discovery, drug design and screening (Aspuru-Guzik_2018, Duvenaud_2015, Jain_2013, Agrawal_2016, Jha_2017, Gómez-Bombarelli_2018, Sanchez-Lengeling_2018) 
 
-•	Availability of data, sophisticated algorithms for model training, and parallel processing have enabled us to employ data-driven methods to speed up the materials design/discovery (Jain_2013, Agrawal_2016, Jha_2017, Gómez-Bombarelli_2018, Sanchez-Lengeling_2018) 
 
 •	Quantum mechanical calculations based on density functional theory have been successful  in predicting activity, selectivity and stability of catalyst materials for applications in energy storage and conversion devices (fulfilling the requirements in terms of cost and lifetime) (Eslamibidgoli_2016)
 
