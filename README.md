@@ -1,6 +1,6 @@
 # Perspective: Artificial intelligence for accelerated materials discovery in electrocatalysis
 ## Outline Summary
-1.  Employing data-driven methods for accelerated materials discovery 
+1.     Employing data-driven methods for accelerated materials discovery 
 2.	A review section on recent data-driven methods for electro-catalyst design  
 3.	Formulating an approach to speed up the materials discovery with machine learning
 4.	Necessity for generating specialized data for specific reaction/catalyst   	
@@ -8,6 +8,7 @@
 ## Abstract
 ## 1. Introduction
 •	Motivation: AI methods have already developed in reasoning, learning, natural language processing, computer vision, and robotics. Extensive research is focused to develop such methods for virtual materials design, drug design and screening (Aspuru-Guzik_2018, Duvenaud_2015) 
+
 •	Availability of data, sophisticated algorithms for model training, and parallel processing have enabled us to employ data-driven methods to speed up the materials design/discovery (Jain_2013, Agrawal_2016, Jha_2017, Gómez-Bombarelli_2018, Sanchez-Lengeling_2018) 
 •	Quantum mechanical calculations based on density functional theory have been successful  in predicting activity, selectivity and stability of catalyst materials for applications in energy storage and conversion devices (fulfilling the requirements in terms of cost and lifetime) (Eslamibidgoli_2016)
 •	However, DFT methods are limited to approaching the self-consistency challenge in electrocatalysis due to complexity of electrode-electrolyte interface and its immense parameter space (Eslamibidgoli_2018)  
