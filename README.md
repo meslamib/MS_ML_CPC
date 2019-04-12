@@ -1,10 +1,12 @@
 # Perspective: Artificial intelligence for accelerated materials discovery in electrocatalysis
 ## Outline Summary
-1.     Employing data-driven methods for accelerated materials discovery 
+
+1.      Employing data-driven methods for accelerated materials discovery 
 2.	A review section on recent data-driven methods for electro-catalyst design  
 3.	Formulating an approach to speed up the materials discovery with machine learning
 4.	Necessity for generating specialized data for specific reaction/catalyst   	
 5.	Introducing Virtual Materials Intelligence (VMI) Labs as an open-source platform for collaborative research in materials discovery for clean energy applications 
+
 ## Abstract
 ## 1. Introduction
 •	Motivation: AI methods have already developed in reasoning, learning, natural language processing, computer vision, and robotics. Extensive research is focused to develop such methods for virtual materials design, drug design and screening (Aspuru-Guzik_2018, Duvenaud_2015) 
