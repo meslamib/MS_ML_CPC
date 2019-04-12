@@ -54,9 +54,12 @@ experiment	…	SVM	…	…	…	…
 •	Neural network potential-energy surfaces in chemistry: a tool for large-scale simulations (Behler_2011)
 o	Generating latent space of a molecule using autoencoder and predictor. (Gómez-Bombarelli_2018)
 •	More and more reviews needed here not only in electrocatalysis but also for other type of materials e.g. genetic algorithms extensively used for predicting macromolecules, drug design or polymers.
+
 ## 3.	Introducing Virtual Materials Intelligence Database
 (To be completed by NRC team)
+
 ## 4.	Perspective for future research
+
 ## 5.	References
 
 1. Aspuru-Guzik, Alan, Roland Lindh, and Markus Reiher. ACS central science 4.2 (2018): 144-152.
