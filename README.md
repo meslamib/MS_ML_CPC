@@ -65,8 +65,13 @@ b.
 
 •	Brief review: Generate a table of recent models for material simulation like below 
 
-| Dataset (size, availability, how generated)  | Features/Attributes | Training Algorithm  | Input | Output  | Performance | Seventh Header  | Reference |
+| Dataset (how generated, availability size)  | Features/Attributes | Training Algorithm  | Input | Output  | Performance | Seventh Header  | Reference |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| DFT or higher-level methods/available/1000  | (no explicit feature) Kernel function | Kernel Ridge Regression (KRR) via 5-fold cross validation  | Atomic Position  | Optimized FF parameters (DFT energy)  | (AGNI ML force field)	1- compared with DFT	2- prediction error  | Content Cell  | 1 |
+| ab initio data (QM)/not available/1250  | (no explicit feature) Genetic operations: mutation and crossover with crossover-rate 3% | Genetic Algorithm (GA)  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
 
