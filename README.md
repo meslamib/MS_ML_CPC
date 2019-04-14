@@ -12,16 +12,16 @@
 
 ## 1. Introduction
 
-•	Motivation: AI methods have already developed in reasoning, learning, natural language processing, computer vision, and robotics. Extensive research is focused to develop such methods for virtual materials design, drug design and screening (Aspuru-Guzik_2018, Duvenaud_2015) 
+•	Machone learning background
 		
 		Machine learning is a branch in computer science that consists of a set of algorithms that find patterns in a given data. In general data is expressed in the form of vectors belonging to a (high dimensional) feature space, and a common task of a machine learning algorithm is to classify labeled data (e.g. using support vector machines in supervised learning), clustering data (e.g. using principal component analysis in unsupervised learning), or ... There are two flavors in machine learning algorithms based on probabilistic models (e.g. Markov Random fields)
 		
 		Although the primary algorithms were developed in 1950s-1980s (e.g. artificial neural networks), it has been more recently that such algorithms (and more recently developed sophisticated ones like deep learning algorithms) start working well. This is due to the availability of much bigger data for model training along with much more powerful parallel computer processing. Machine learning have already developed in reasoning, learning, natural language processing, computer vision, and robotics. Extensive research is also focused to develop such methods for virtual materials discovery, drug design and screening (Aspuru-Guzik_2018, Duvenaud_2015, Jain_2013, Agrawal_2016, Jha_2017, Gómez-Bombarelli_2018, Sanchez-Lengeling_2018) 
 
+•	First-principles electrochemistry: achievements and challenges 
 
-•	Quantum mechanical calculations based on density functional theory have been successful  in predicting activity, selectivity and stability of catalyst materials for applications in energy storage and conversion devices (fulfilling the requirements in terms of cost and lifetime) (Eslamibidgoli_2016)
 
-•	However, DFT methods are limited to approaching the self-consistency challenge in electrocatalysis due to complexity of electrode-electrolyte interface and its immense parameter space (Eslamibidgoli_2018)  
+	•	Quantum mechanical calculations based on density functional theory have been successful  in predicting activity, selectivity and stability of catalyst materials for applications in energy storage and conversion devices (fulfilling the requirements in terms of cost and lifetime) (Eslamibidgoli_2016). However, DFT methods are limited to approaching the self-consistency challenge in electrocatalysis due to complexity of electrode-electrolyte interface and its immense parameter space (Eslamibidgoli_2018)  
 	o	Electrode region: structure, shape and composition of material; Interfacial region: water structure, adsorbed species, surface charging; Electrolyte region: pH, ion distribution, reactant distribution
 	o	Main challenges: (1) construct continuous path for potential between metal bulk and electrolyte bulk; across all components, layers and interface; DFT functionals (qm and classical) describe bulk properties well; coupling of regions at interfaces: not well represented in interface functionals (functionals for adsorbates, functionals for surface solvent layers…); is it possible at all to do this completely self-consistently from first principles or will there have to be some layer of empirical input? Example: oxide layer formation at Pt… Illustration: inability to reproduce non-linear charging relation of Pt in computational approach (would need reactivity DFT to handle oxide coverage as a function of potential); (2) controlling potential in DFT: theoretically impossible, as absolute potential does not exist; practically: need reference point or reference electrode – introducing further complications, but can be worked out… 
 	
