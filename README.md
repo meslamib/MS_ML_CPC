@@ -64,27 +64,30 @@ Brockherde et al. used a novel machine learning (ML) approach, in which DFT ener
 It has already been proven that having a larger dataset would significantly enhance the accuracy of ML-based KS kinetic energy models. (Hansen_2013) Nevertheless, energy minimization via gradient descent algorithm obviously needs the calculation of the all gradients. Rather calculating the gradients, Ribeiro et al. (Ribeiro_2015) proposed a novel approach, in which the Hohenberg–Kohn mapping can be approximated precisely using semiclassical expressions. It can be stated that the proposed algorithm in the Brockherde et al. study, speeds up the AIMD and geometry optimization of the investigated organic compounds.
 
 
-a.	learning the energy functional via examples (force field development)
+*Towards exact molecular dynamics simulations with machine-learned force fields
+
+*introducing sGDML: a python package which directly can use VMI dataset
+
+*bio: protien folding just to show how broad this work is
+
+*some electrocatalysis stuff by mehrtoos
+
 
 b.
 
 •	Brief review: Generate a table of recent models for material simulation like below 
 
-| Dataset (how generated, availability size)  | Features/Attributes | Training Algorithm  | Input | Output  | Performance | Seventh Header  | Reference |
-| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| DFT or higher-level methods/available/1000  | (no explicit feature) Kernel function | Kernel Ridge Regression (KRR) via 5-fold cross validation  | Atomic Position  | Optimized FF parameters (DFT energy)  | (AGNI ML force field)	1- compared with DFT	2- prediction error  | Content Cell  | 1 |
-| ab initio data (QM)/not available/1250  | (no explicit feature) Genetic operations: mutation and crossover with crossover-rate 3% | Genetic Algorithm (GA)  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+| Dataset (how generated, availability size)  | Features/Attributes | Training Algorithm  | Input | Output  | Performance | Reference |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| DFT/available/2000 for energy  | (infinite dimensional feature space) Kernel function | Kernel Ridge Regression (KRR) | Atomic position, potential energy, and valence densities  | DFT Energy | Compared with classical trajectory of MD simulation  | Brockherde_2017  |
+| DFT or higher-level methods/available/1000  | (infinite dimensional feature space) Kernel function | Kernel Ridge Regression (KRR)  | Atomic position  | Optimized FF parameters (DFT energy)  | (AGNI ML force field)	1- compared with DFT	2- prediction error  | Huan_2017  |
+| ab initio data (QM)/not available/1250  | (no explicit feature) Genetic operations: mutation and crossover with crossover-rate 3% | Genetic Algorithm (GA)  | Atomic position and interaction energy  | Optimized FF parameters (DFT energy) | 1- compared with DFT (AMOEBA FF)	2- compared with exp. (neutron scattering results) | Li_2017  | 
+| Exp: PDB (protein database bank)/available/10,173-14,064-17,607 (3 dataset used)  | 1- cos and sin values of backbone dihedral angles		2- total solvent accessible surface area (SASA) of backbone atoms	3- three-type (helix, sheet, loop) secondary structure | Neural Net (activation function: ReLU | Atomic position  | probabilities of 20 residue types of the target residue (softmax function)  | 1- Top-K accuracy on exp. SI90N15 dataset	2- Top-K accuracy on fixed-backbone design program in Rosetta | Wang_2018  | 
+| Exp: SCOP database v1.75/available/16,712 | 1- sequence	2-profile	3- predicted secondary structure	4- predicted solvent accessibility of each protein | 1D-convolutional neural net (activation function: ReLU) | Atomic position  | probability of 1195 folds (softmax function) | 1- accuracy on SCOP dataset v2.06	2- accuracy on CASP dataset | Hou_2018  |
+| Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
 
-Dataset (size, how generated)	Features/attributes 	Training algorithm	input	output	performance	Reference
-DFT	Geometrical, electronic structure	Neural net	Atomic position	DFT energy	Compared with DFT	…
-DFT	…	Autoencoder	Chemical structure	…	…	…
-experiment	…	SVM	…	…	…	…
-…	…	Genetic algorithm	…	…	…	…
 
 •	Different flavors of ML have been used: graphical probabilistic models for reaction network (Ulissi_2017) 
 •	as well as models based on empirical risk minimization (Goldsmith_2018) 
