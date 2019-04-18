@@ -59,8 +59,13 @@
 
 ## 2.	Review on recent AI models for materials simulation (to be completed by Mehrtoos and Mehrdad)
 
+To study the electronic structure of compounds, in a wide variety of materials simulation papers, the Kohn–Sham equations of density functional theory is being used. Employing machine learning, however, can significantly decrease the computational costs and time by bypassing the need to solve the Kohn–Sham equations. (Brockherde_2017)
+Brockherde et al. used a novel machine learning (ML) approach, in which DFT energy can be calculated from a given external potential. The ML potential-density map, Hohenberg–Kohn (HK) map, is also applied to 1D potentials and 3D molecules using Gaussian potentials. The idea of using artificial Gaussian potential, however, has been previously used in Bartók et al. paper. (Bartók_2010) As a result, the machine learned potential-density map can be used instead of solving the Kohn–Sham (KS) equations by employing the kernel ridge regression (KRR) training algorithm made from the external potential.
+It has already been proven that having a larger dataset would significantly enhance the accuracy of ML-based KS kinetic energy models. (Hansen_2013) Nevertheless, energy minimization via gradient descent algorithm obviously needs the calculation of the all gradients. Rather calculating the gradients, Ribeiro et al. (Ribeiro_2015) proposed a novel approach, in which the Hohenberg–Kohn mapping can be approximated precisely using semiclassical expressions. It can be stated that the proposed algorithm in the Brockherde et al. study, speeds up the AIMD and geometry optimization of the investigated organic compounds.
+
+
 a.	learning the energy functional via examples (force field development)
-i.	strategy, review of the works (Brockherde,_2017)
+
 b.
 
 •	Brief review: Generate a table of recent models for material simulation like below 
