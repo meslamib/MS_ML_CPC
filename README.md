@@ -1,13 +1,5 @@
 # Perspective: Machine learning for accelerated materials discovery in electrocatalysis
 
-## Outline Summary
-
-1.	Employing data-driven methods for accelerated materials discovery 
-2.	A review section on recent data-driven methods for electro-catalyst design  
-3.	Formulating an approach to speed up the materials discovery with machine learning
-4.	Necessity for generating specialized data for specific reaction/catalyst   	
-5.	Introducing Virtual Materials Intelligence (VMI) Labs as an open-source platform for collaborative research in materials discovery for clean energy applications 
-
 ## Abstract
 
 ## 1. Introduction
@@ -19,8 +11,12 @@ Extensive research is recently focused on employing such methods in theoretical 
 ### first-principles electrochemistry:
 Quantum mechanical calculations based on DFT have been extensively employed for understanding reaction mechanisms and predicting activity and selectivity of catalyst materials for applications in energy storage and conversion devices (Eslamibidgoli_2016). However, system size and complexity of the electrode-electrolyte interface and its immense parameter space limit such methods in terms of proper simulation of the interface, as well as fast materials screening (Eslamibidgoli_2018). System size exponentially scales the computational cost of DFT-based approaches which in turn limit the generalization and scalability of these methods. Moreover, in the electrode region, the structure, shape and composition of material, in the interfacial region, the water structure, adsorbed species, surface charging behavior, and in the electrolyte region, pH, ion distribution, and reactant distribution could play crucial roles in determinig the structure-property relations of the electrocatalyst material. Additionaly, reasonable sampling at the electrolyte side, i.e., statistical averaging over all possible configurations, is not feasible from first-principles methods alone. Therefore, DFT should be considered as a first (and essential step) in a hierarchy of methods to reasonably address these challenges. 
 
-Given a 
-
+In this context, DFT-based machine learning methods have been promising in materials science in terms of predictive ability and fast discovery. A common sense approach involves several steps as follows:  Step 1. Generating a combinatorial library - a "big data” using theory (DFT, molecular dynamics simulations, etc.) and experiment to compute mixtures of materials (proper and relevant choices should be made here correspond to experiment, e.g. for various surface states, nanoparticles, bulk structures, slabs, with water layers, etc.; within an order of hundred thousand calculations needed (the larger the data the better to train the ML model). 
+			Bottleneck to generate this library? human resources (efficient data harvesting methods needed), computational resources. The solution is in availability of a database system for materials design for a specific target reaction. VIM as will be discussed below. 
+			Data should account for variables for the electronic structure of the solid electrode, solvent properties and ion distributions in the electrolyte as well as specific properties of a boundary region in-between. Idea: AIMD methods might be more efficiently employed for data generation (Groß_2014).  
+	o	Train a machine learning method (e.g. tune the parameters of a neural net) for searching, classifying, or clustering the chemical space in terms of functionality -  this is an efficient screening/filtering of structure-property relationships to prioritize/predict the materials of interest (maybe only a hundred out of 100,000 are predicted as good) (Meredig_2014, Ward_2016), 
+	o	use DFT again to calculate the properties of the predicted structures and evaluate the correlation between ML predicted and DFT calculated structures (Pyzer-Knapp_2015, Hachmann_2011). Filter out experimentally irrelevant structures.
+	o	Finally, proposed material should be experimentally synthesized and be tested (essential step); Consequently, out of a hundred of predicted materials maybe only a few of them are useful.
 	
 •	Explain how AI models can address the challenges explained above in DFT calculations [we should be more cautious: there will be problems for which this will work (based on DFT alone) and problems for which it will not work (based on DFT alone; at least not in the near future …) and require input from phenomenological theory and/or experiment; can we identify the problems/systems falling into these different categories? It is a dream to have one approach for all; but that might not be a realistic expectation for the foreseeable future…]
 
@@ -42,14 +38,7 @@ Given a
 	o	Model evaluation and benchmarking (test on independent datasets for performance evaluation)
 	o	Feature extraction (similarity metrics: Euclidean distance, Manhattan distance, Pearson correlation score, KL-divergence)
 	
-•	An appropriate figure for this section: Formulate the approach with QM and machine learning (QM predictor based on machine learning) for simulation of electrode-electrolyte interface 
 
-	o	Step 1: Sampling - Generate a combinatorial library; a “big data” using DFT to compute mixtures of materials (proper and relevant choices should be made here correspond to experiment, e.g. for various surface states, nanoparticles, bulk structures, slabs, with water layers, etc.; within an order of hundred thousand calculations needed (the larger the data the better to train the ML model). 
-			Bottleneck to generate this library? human resources (efficient data harvesting methods needed), computational resources. The solution is in availability of a database system for materials design for a specific target reaction. VIM as will be discussed below. 
-			Data should account for variables for the electronic structure of the solid electrode, solvent properties and ion distributions in the electrolyte as well as specific properties of a boundary region in-between. Idea: AIMD methods might be more efficiently employed for data generation (Groß_2014).  
-	o	Train a machine learning method (e.g. tune the parameters of a neural net) for searching, classifying, or clustering the chemical space in terms of functionality -  this is an efficient screening/filtering of structure-property relationships to prioritize/predict the materials of interest (maybe only a hundred out of 100,000 are predicted as good) (Meredig_2014, Ward_2016), 
-	o	use DFT again to calculate the properties of the predicted structures and evaluate the correlation between ML predicted and DFT calculated structures (Pyzer-Knapp_2015, Hachmann_2011). Filter out experimentally irrelevant structures.
-	o	Finally, proposed material should be experimentally synthesized and be tested (essential step); Consequently, out of a hundred of predicted materials maybe only a few of them are useful.
 
 ## 2.	Review on recent AI models for materials simulation (to be completed by Mehrtoos and Mehrdad)
 
