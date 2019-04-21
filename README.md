@@ -65,7 +65,7 @@ It has already been proven that having a larger dataset would significantly enha
 
 
 *Towards exact molecular dynamics simulations with machine-learned force fields
-
+*Machine learning of accurate energy-conserving molecular force fields
 
 (Chmiela_2018) It has been proven that the fidelity of molecular dynamics simulations will be determined by the accuracy of classical interatomic potential. Stefan Chmiela et al. developed a symmetrized gradient-domain machine learning (sGDML) model, in which one can create a molecular force field with the same accuracy as high-level ab initio calculations. 
 Using limited samples of ab initio molecular dynamics (AIMD) trajectories Chmiela et al. in 2017 [11] built GDML model. Employing GDML one could generate the global potential energy surfaces (PES) of compounds, mainly the intermediate-sized organic molecules investigated. The author used the concept of energy conservation to avoid overfitting in the proposed machine-learned (ML) model.  
