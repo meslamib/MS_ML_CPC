@@ -66,6 +66,14 @@ It has already been proven that having a larger dataset would significantly enha
 
 *Towards exact molecular dynamics simulations with machine-learned force fields
 
+
+(Chmiela_2018) It has been proven that the fidelity of molecular dynamics simulations will be determined by the accuracy of classical interatomic potential. Stefan Chmiela et al. developed a symmetrized gradient-domain machine learning (sGDML) model, in which one can create a molecular force field with the same accuracy as high-level ab initio calculations. 
+Using limited samples of ab initio molecular dynamics (AIMD) trajectories Chmiela et al. in 2017 [11] built GDML model. Employing GDML one could generate the global potential energy surfaces (PES) of compounds, mainly the intermediate-sized organic molecules investigated. The author used the concept of energy conservation to avoid overfitting in the proposed machine-learned (ML) model.  
+
+Basically, the proposed ML approach begins with construction of a descriptor, which encodes the structure of each molecule from training dataset. The kernel matrix developed from a kernel function, in which all descriptors will be related to each other. The kernel function calculates the similarity between input data. Chmiela et al. then proved that a comparable energy model will not be able to regenerate the PES as the same accuracy as force model, because energy-based model cannot properly reproduce the under-sampled regions.  
+
+
+
 *introducing sGDML: a python package which directly can use VMI dataset
 
 *bio: protien folding just to show how broad this work is
@@ -80,6 +88,7 @@ b.
 | Dataset (how generated, availability size)  | Features/Attributes | Training Algorithm  | Input | Output  | Performance | Reference |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | DFT/available/2000 for energy  | (infinite dimensional feature space) Kernel function | Kernel Ridge Regression (KRR) | Atomic position, potential energy, and valence densities  | DFT Energy | Compared with classical trajectory of MD simulation  | Brockherde_2017  |
+| AIMD/available/1000 conformational geometries  | (infinite dimensional feature space) Kernel function | Kernel Ridge Regression (KRR) | AIMD trajectories  | AIMD trajectories  | Compared interatomic distance distributions results with DFT-MD simulations  | Chmiela_2017  |
 | DFT or higher-level methods/available/1000  | (infinite dimensional feature space) Kernel function | Kernel Ridge Regression (KRR)  | Atomic position  | Optimized FF parameters (DFT energy)  | (AGNI ML force field)	1- compared with DFT	2- prediction error  | Huan_2017  |
 | ab initio data (QM)/not available/1250  | (no explicit feature) Genetic operations: mutation and crossover with crossover-rate 3% | Genetic Algorithm (GA)  | Atomic position and interaction energy  | Optimized FF parameters (DFT energy) | 1- compared with DFT (AMOEBA FF)	2- compared with exp. (neutron scattering results) | Li_2017  | 
 | Exp: PDB (protein database bank)/available/10,173-14,064-17,607 (3 dataset used)  | 1- cos and sin values of backbone dihedral angles		2- total solvent accessible surface area (SASA) of backbone atoms	3- three-type (helix, sheet, loop) secondary structure | Neural Net (activation function: ReLU | Atomic position  | probabilities of 20 residue types of the target residue (softmax function)  | 1- Top-K accuracy on exp. SI90N15 dataset	2- Top-K accuracy on fixed-backbone design program in Rosetta | Wang_2018  | 
