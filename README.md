@@ -76,6 +76,10 @@ Basically, the proposed ML approach begins with construction of a descriptor, wh
 
 *bio: protien folding just to show how broad this work is
 
+
+Another important application of machine learning can be found in computational protein design (Wang_2018) and protein structure prediction problems (Paliwal_2015). Deep Neural Networks (DNNs) have been extensively utilized for addressing different problems in biological science. Deep neural network architectures such as feed-forward neural nets, recurrent neural nets and memory networks (Paliwal_2015) are the most used architectures in this area. Other ML methods such as support vector machines (SVMs) and random forests are limited in the complexity of learning different features so one has to be cautious about selecting features. 
+However, deep neural networks with several hidden layers effectively can learn complex mappings with the same size of training dataset. Wang et al. used DNNs to predict the probability of 20 natural amino acids on each residue in a protein. The full network in their work begins with a residue probability network and a weight network, which concatenation of the output of these networks will create the inputs for the final network. A 20-dimentional softmax layer employed as the final output to give the probabilities of 20 different residue types of the target residue. Other information such as dataset size and assigned features can be found in the table_1 above/below.
+
 ***some electrocatalysis stuff by mehrtoos
 
 
