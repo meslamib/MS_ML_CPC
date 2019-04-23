@@ -66,19 +66,17 @@ It has already been proven that having a larger dataset would significantly enha
 
 *Towards exact molecular dynamics simulations with machine-learned force fields
 *Machine learning of accurate energy-conserving molecular force fields
+*introducing sGDML: a python package which directly can use VMI dataset
 
 (Chmiela_2018) It has been proven that the fidelity of molecular dynamics simulations will be determined by the accuracy of classical interatomic potential. Stefan Chmiela et al. developed a symmetrized gradient-domain machine learning (sGDML) model, in which one can create a molecular force field with the same accuracy as high-level ab initio calculations. 
 Using limited samples of ab initio molecular dynamics (AIMD) trajectories Chmiela et al. in 2017 [11] built GDML model. Employing GDML one could generate the global potential energy surfaces (PES) of compounds, mainly the intermediate-sized organic molecules investigated. The author used the concept of energy conservation to avoid overfitting in the proposed machine-learned (ML) model.  
-
-Basically, the proposed ML approach begins with construction of a descriptor, which encodes the structure of each molecule from training dataset. The kernel matrix developed from a kernel function, in which all descriptors will be related to each other. The kernel function calculates the similarity between input data. Chmiela et al. then proved that a comparable energy model will not be able to regenerate the PES as the same accuracy as force model, because energy-based model cannot properly reproduce the under-sampled regions.  
-
+Basically, the proposed ML approach begins with construction of a descriptor, which encodes the structure of each molecule from training dataset. The kernel matrix developed from a kernel function, in which all descriptors will be related to each other. The kernel function calculates the similarity between input data. Chmiela et al. then proved that a comparable energy model will not be able to regenerate the PES as the same accuracy as force model, because energy-based model cannot properly reproduce the under-sampled regions. Hence, all trainings occur in the force domain to generate PES topology. Chmiela et al. (Chmiela_2019) have been also released a Python software package which is able to construct molecular force fields (FFs) from a limited number of reference molecular conformations provided by user.
 
 
-*introducing sGDML: a python package which directly can use VMI dataset
 
 *bio: protien folding just to show how broad this work is
 
-*some electrocatalysis stuff by mehrtoos
+***some electrocatalysis stuff by mehrtoos
 
 
 b.
