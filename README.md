@@ -1,8 +1,15 @@
-# Perspective: Machine learning for accelerated materials discovery in electrocatalysis
+## Virtual Materials Intelligence for Design and Discovery of Advanced Electrocatalysts 
 
-## Abstract
+Ref. [1]:
 
-## 1. Introduction
+Ref. [2]:
+
+
+# Abstract
+
+Similar to the advancements gained from big data in genomics, security, internet of things, and e-commerce, the materials workflow could be made more efficient and prolific through advances in streamlining data sources, autonomous materials synthesis, rapid characterization, big data analytics, and self-learning algorithms. In electrochemical materials science, data sets are large, unstructured/heterogeneous, and difficult to process and analyze from a single data channel or platform. Computer-aided materials design together with advances in data mining, machine learning, and predictive analytics are touted to provide inexpensive and accelerated pathways towards tailor-made functionally optimized energy materials. Fundamental research in the field of electrochemical energy materials focuses primarily on complex interfacial phenomena and kinetic electrocatalytic processes. This perspective article critically ranks existing AI-driven modeling and computational approaches that are currently applied to those objects. An application-driven materials intelligence platform is also introduced, and its functionalities are scrutinized considering the development of electrocatalyst materials for CO2 conversion as a use case.
+
+# 1. Introduction
 				
 Machine learning is a highly active branch in computer science that consists of a set of algorithms that find patterns in a given data. Data is expressed in the form of vectors associated to a (high dimensional) feature space, and the common task of a machine learning algorithm (whether it is a generative or a discriminative model) is to "learn" from data and make predictions on unseen data. The learning process typically involves an optimization routine, such as stochastic gradient descent, to find a set of hidden parameters associated to features that minimize an objective function (e.g., minimizing the negative of log-likelihood function). Given the parameters, the predictive model can be appiled to unseen data. Although the primary methods were developed in 1950s-1980s, there has only been many recent breakthrough in aritificial intelligence with interesting appications such as in computer vision, speech and language technologies, self-driving cars, recommender systems, financial predictions, robotics, etc. This is mainly due to 1. more recent complicated developed arhcitecture and algorithms for neural nets, 2. availability of much bigger data for model training, 3. much more powerful parallel computer processing, 4. enhanced frameworks for implementation, and 5. of course, larger industrial investments in the field. 
 		
@@ -16,51 +23,6 @@ Second step is to select the machine learning model and to train it for searchin
 
 Next step is to use DFT again to calculate the properties of the predicted structures and evaluate the performance of the machine learning predicted and DFT calculated structures (Pyzer-Knapp_2015, Hachmann_2011). Finally, proposed material should be experimentally synthesized and be tested (essential step); Consequently, out of a hundred of predicted materials maybe only a few of them are useful.
 
-	
-	
-	
-
-	
-	o	Size, classes, balance or imbalance (imbalance: challenging to train a classifier to predict)
-	o	Split to test set and cross validation set for training and tuning hyperparameters
-	o	Feature generation and labeling 
-	o	ML method for classification
-	o	Model training and validation 
-	o	Model evaluation and benchmarking (test on independent datasets for performance evaluation)
-	o	Feature extraction (similarity metrics: Euclidean distance, Manhattan distance, Pearson correlation score, KL-divergence)
-	
-
-
-## 2.	Review on recent AI models for materials simulation (to be completed by Mehrtoos and Mehrdad)
-
-a.	learning the energy functional via examples (force field development)
-i.	strategy, review of the works (Brockherde,_2017)
-b.
-
-•	Brief review: Generate a table of recent models for material simulation like below 
-
-| First Header  | Second Header | Third Header  | Fourth Header | Fifth Header  | Sixth Header | Seventh Header  | Eighth Header |
-| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-
-Dataset (size, how generated)	Features/attributes 	Training algorithm	input	output	performance	Reference
-DFT	Geometrical, electronic structure	Neural net	Atomic position	DFT energy	Compared with DFT	…
-DFT	…	Autoencoder	Chemical structure	…	…	…
-experiment	…	SVM	…	…	…	…
-…	…	Genetic algorithm	…	…	…	…
-
-•	Different flavors of ML have been used: graphical probabilistic models for reaction network (Ulissi_2017) 
-•	as well as models based on empirical risk minimization (Goldsmith_2018) 
-•	Neural network models (Yao_2018, Artrith_2014 Hy_2018)
-•	Neural network potential-energy surfaces in chemistry: a tool for large-scale simulations (Behler_2011)
-•	Generating latent space of a molecule using autoencoder and predictor. (Gómez-Bombarelli_2018)
-•	More and more reviews needed here not only in electrocatalysis but also for other type of materials e.g. genetic algorithms extensively used for predicting macromolecules, drug design or polymers.
-
-## 3.	Introducing Virtual Materials Intelligence Database
-(To be completed by NRC team)
-
-## 4.	Perspective for future research
 
 ## 5.	References
 
