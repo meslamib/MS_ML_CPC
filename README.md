@@ -1,8 +1,8 @@
 ## Virtual Materials Intelligence for Design and Discovery of Advanced Electrocatalysts 
 
-Ref. [1]:
+Ref. [1]: Eslamibidgoli, Mohammad Javad, Mehrdad Mokhtari, and Michael H. Eikerling. "Recurrent Neural Network-based Model for Accelerated Trajectory Analysis in AIMD Simulations." arXiv preprint arXiv:1909.10124 (2019).
 
-Ref. [2]:
+Ref. [2]: Virtual Materials Intelligence for Design and Discovery of Advanced Electrocatalysts (In proof: DOI: 10.1002/cphc.201900570R1)
 
 
 # Abstract
